@@ -9,5 +9,7 @@ for index,row in df.iterrows():
     pdf.set_font(family="Times",style="B",size=22)
     pdf.cell(w=0,h=12,txt=row["Topic"] ,border=0,ln=0,align="L")
     pdf.line(10,21,200,21)
+    for i in range(row["Pages"]-1):
+        pdf.add_page()
 
 pdf.output("output.pdf")
